@@ -3,10 +3,6 @@
   <img alt="Vue logo" src="./assets/logo.png">
   <HomeComponente />
   <hr>
- <HomeComponente />
- <hr>
-  <UsuarioComponent />
-  <hr>
   <UsuarioComponent />
 </div>
 </template>
