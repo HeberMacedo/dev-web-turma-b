@@ -8,20 +8,36 @@
     <br>
     <home-component/>
     <hr>
-    <usuario-component />
+    <usuario-component v-show="componentUsuarioVisivel"/>
   </div>
+    <hr>
+    <Imagemcomponent @visibilidade-img="escutarVisibilidadeImg"
+    larguraImhg="500"
+    urlImagem="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHOy8vuWcgOSylpmxu98YAeuQhbldudi1wCg&s" />
 </template>
 
 <script>
 import HomeComponent from './components/HomeComponent.vue';
 import UsuarioComponent from './components/UsuarioComponent.vue';
 import EstiloComponent from './components/EstiloComponent.vue';
+import Imagemcomponent from './components/Imagemcomponent.vue';
 export default {
   name: 'App',
   components: {
     HomeComponent,
     UsuarioComponent,
     EstiloComponent,
+    Imagemcomponent, 
+},
+data() {
+  return {
+    componentUsuarioVisivel: false,
+  };
+},
+methods: {
+  escutarVisibilidadeImg(isVisivel) {
+    this.componentUsuarioVisivel = !isVisivel;
+  },
 },
   mounted() {
     console.log("mounted");
