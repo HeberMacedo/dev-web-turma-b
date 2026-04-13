@@ -1,12 +1,11 @@
 const meuAppVue = {
-    data() {
-        return {
-            nome: "Fábio Ruan",
-            idade: 18,
-            inputText: "",
-        };
-    }
+  data() {
+    return {
+      nome: "Fernando Dias",
+      idade: 38,
+      inputText: "",
+    };
+  },
 };
 
 Vue.createApp(meuAppVue).mount("#app");
- 

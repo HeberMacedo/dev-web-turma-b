@@ -1,47 +1,44 @@
-window.onload = function() {
-    iniciar();
+window.onload = function () {
+  iniciar();
 };
 
 function iniciar() {
+  const input = document.getElementById("tarefaInput");
+  const btnAdicionar = document.getElementById("btnAdicionar");
+  const lista = document.getElementById("listaTarefas");
 
-    const input = document.getElementById("tarefaInput");
-    const btnAdicionar = document.getElementById("btnAdicionar");
-    const lista = document.getElementById("listaTarefas");
+  btnAdicionar.addEventListener("click", () => {
+    //recupera o valor do campo input text
+    const texto = input.value.trim();
 
-    btnAdicionar.addEventListener("click", () => {
+    //Criar um elemento da minha lista de tarefas
+    const itemLista = document.createElement("li");
 
-        //recupera o valor do campo input text
-        const texto = input.value.trim();
+    //Crie um botão
+    const btnRemover = document.createElement("button");
+    btnRemover.textContent = "x";
+    //adiciona a classe fechar ao botão
+    btnRemover.classList.add("fechar");
 
-        //criar um elemento da minha lista de tarefas
-        const itemLista = document.createElement("li");
-
-        const btnRemover = document.createElement("button");
-        btnRemover.textContent = "x";
-        
-        //adiciona a classe fechar o botão 
-        btnRemover.classList.add("fechar");
-
-        //adiciona o evento delete do item   
-        btnRemover.addEventListener("click", () => {
-            itemLista.remove();
-        });
-
-        //adicionar o valor do input no meu item da lista
-        itemLista.textContent = texto;
-
-        //adicionei botão de remover item da lista
-        itemLista.appendChild(btnRemover);
-
-        itemLista.addEventListener("click", () => {
-            itemLista.classList.toggle("concluida");
-        });
-
-        //adicionar o item na lista para ser apreentado
-        lista.appendChild(itemLista);
-
-        //limpar o campo input
-        input.value = "";
+    //Adiciona o evento de delete do item
+    btnRemover.addEventListener("click", () => {
+      itemLista.remove();
     });
 
+    //Adicionar o valor do input no meu item da lista
+    itemLista.textContent = texto;
+
+    //Adicionei o botão no item de lista.
+    itemLista.appendChild(btnRemover);
+
+    itemLista.addEventListener("click", () => {
+      itemLista.classList.toggle("concluida");
+    });
+
+    //Adiciona o imte na lista para ser apresentado
+    lista.appendChild(itemLista);
+
+    //Limpar o input
+    input.value = "";
+  });
 }
