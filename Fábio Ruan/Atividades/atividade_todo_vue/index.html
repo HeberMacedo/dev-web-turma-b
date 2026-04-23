@@ -55,7 +55,13 @@
                 <button @click="adicionarTarefa">Adicionar</button>
             </div>
             <ul>
-                <!-- as tarefas vao aparecer aqui -->
+                <li v-for="tarefa in tarefas">
+                    <span>{{ tarefa.texto }}</span>
+                    <div>
+                        <button class="btn-concluir">Concluir</button>
+                        <button class="btn-remover">Remover</button>
+                    </div>
+                </li>
             </ul>
         </div>
     </div>
@@ -68,12 +74,16 @@
             data() {
                 return {
                     novaTarefa: "",
-                    tarefas: ""
+                    tarefas: []
                 }
             },
             methods: {
                 adicionarTarefa() {
-                    console.log(this.novaTarefa)
+                    this.tarefas.push({
+                        texto: this.novaTarefa,
+                        concluida: false
+                    })
+                    this.novaTarefa = ""
                 }
             }
         }).mount('#app')
