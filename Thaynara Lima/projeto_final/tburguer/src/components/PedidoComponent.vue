@@ -1,0 +1,128 @@
+<template>
+  <div>
+    <form id="pedido-form">
+      
+      <div>
+        <p id="nome-hamburguer-content">
+          {{ burguer && burguer.nome ? burguer.nome : "--" }}
+        </p>
+
+        <img
+          id="foto-content"
+          :src="burguer && burguer.foto ? burguer.foto : ''"
+        />
+      </div>
+
+      <div class="inputs" id="form-pedido">
+        <label>Nome</label>
+        <input
+        v-model="nomeCliente"  
+        type="text"
+          placeholder="Digite seu Nome"
+          id="nome-cliente"
+        />
+      </div>
+
+      <div class="inputs">
+        <label>Ponto da carne</label>
+
+        <select v-model="pontoCarneSelecionado" name="ponto-carne" id="ponto-carne">
+          <option value="" selected>Selecione o ponto</option>
+          <option v-for="pontoCarne in listaPontosCarne"
+          :key="pontoCarne.id"
+          :value="pontoCarne">{{ pontoCarne.descricao }}</option>
+        </select>
+      </div>
+
+      <div>
+        <label id="opcionais-titulo">Selecionar os opcionais</label>
+        <label id="opcionais-subtitulo">Selecionar os complementos</label>
+
+        <div v-for="complemento in listaComplementos"
+        :key="complemento.id" 
+        class="checkbox-container">
+          <input type="checkbox" :name="complemento.nome" :value="complemento" v-model="listaComplementosSelecionados"/>
+          <span>{{ complemento.nome }}</span>
+        </div>
+
+        <label>Adicione uma bebida</label>
+
+        <div v-for="bebidas in listaBebidas"
+        :key="bebidas.id"
+        class="checkbox-container">
+          <input type="checkbox" />
+          <span>{{ bebidas.nome }}</span>
+        </div>
+      </div>
+
+      <div class="inputs">
+        <input
+          type="submit"
+          class="submit-btn"
+          value="Confirmar pedido"
+        />
+      </div>
+
+    </form>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "PedidoComponent",
+
+  props: {
+    burguer: null,
+  },
+
+  data() {
+    return {
+      listaPontosCarne: [],
+      listaComplementos: [],
+      listaBebidas: [],
+      nomeCliente: "",
+      pontoCarneSelecionado: "",
+      listaComplementosSelecionados: [],
+      ListaBebidaSelecionadas: [],
+    };
+  },
+
+  methods: {
+    async getTiposPontos() {
+      const response = await fetch("http://localhost:3000/tipos_pontos");
+      const dados = await response.json();
+      this.listaPontosCarne = dados;
+    },
+    async getOpcionais() {
+        const response = await fetch("http://localhost:3000/opcionais");
+        const dados = await response.json();
+        this.listaComplementos = dados.complemento;
+        this.listaBebidas = dados.bebidas;
+    },
+    async criarPedido(e) {
+        const dadosPedido = {
+            nome: this.nomeCliente,
+            ponto: this.pontoCarneSelecionado,
+            bebidas: Array.from(this.listaBebidasSelecionadas),
+            complemento: Array.from(this.listaComplementosSelecionados),
+            burguer: this.burguer,
+            statusId: 5,
+        };
+    
+        console.log(dadosPedido);
+        const dadosJson = JSON.stringify(dadosPedido);
+        const req = await fetch("http://localhost:3000/pedidos"), {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+        }
+    },
+  },
+  mounted() {
+    this.getTiposPontos();
+    this.getOpcionais();
+    this.getOpcionais();
+  },
+};
+</script>
+
+<style></style>
