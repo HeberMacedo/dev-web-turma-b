@@ -5,32 +5,36 @@
 </template>
 
 <script>
-import BannerComponent from './components/BannerComponent.vue';
-import NavBarComponent from './components/NavBarComponent.vue';
-
-  export default {
-    name : "App",
-
-    components: {
-      NavBarComponent,
-      BannerComponent,
-    },
-  }
+import BannerComponent from "./components/BannerComponent.vue";
+import NavBarComponent from "./components/NavBarComponent.vue";
+export default {
+  name: "App",
+  components: {
+    NavBarComponent,
+    BannerComponent,
+  },
+};
 </script>
 
 <style>
-
-body {
-  margin: 0;
-}
-
 #app {
-  height: 100vh;
-  background-color: #121212;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #F2E8CF;
+  color: #2c3e50;
+}
+
+nav {
+  padding: 30px;
+}
+
+nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+nav a.router-link-exact-active {
+  color: #42b983;
 }
 </style>

@@ -1,53 +1,31 @@
 <template>
-    <div id="banner">
-        <h1>
-            Hamburguer de Churrasqueiro
-        </h1>
-        <button class="botao">
-            Pedir Agora
-        </button>
+    <div id="main-banner">
+        <h1>Bem-vindo ao T-Burguer!</h1>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'BannerComponent',
+    name: "BannerComponent",
 }
 </script>
-
 <style scoped>
-#banner {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    background-image: url('../../public/img/banner.jpeg');
+#main-banner {
+    background-image: url('/public/img/banner.jpeg');
+    background-position: 0;
     background-size: cover;
-    background-position: center;
-    height: 220px;
-    margin: 20px 0 20px 0;
+    height: 500px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
 }
-
-h1 {
-    font-size: 1.5em;
-    padding: 0.9em;
-    background-color: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(10px);
-    border-radius: 50vh;
-}
-
-.botao {
-    padding: 0.7em 1em;
+#main-banner h1 {
+    color: white;
+    font-size: 48px;
     font-weight: bold;
-    border: none;
-    border-radius: 50vh;
-    background-color: #D95D39;
-    color: #F2E8CF;
-    transition: 0.5s;
-}
-
-.botao:hover {
-    background: #ad4a2e;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 </style>
