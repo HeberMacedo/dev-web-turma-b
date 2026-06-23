@@ -75,6 +75,8 @@ this.listaPedidosRealizados = this.listaPedidosRealizados.filter(
 );
 ```
 
+Na publicacao web, a API mockada usa o My JSON Server. Como esse servico simula POST/PATCH/DELETE sem persistir os dados no repositorio, os pedidos criados no navegador tambem sao guardados em `localStorage` quando a URL de producao aponta para `my-json-server.typicode.com`. Dessa forma, o fluxo publicado continua demonstrando a atualizacao imediata da lista apos cadastrar, editar ou excluir pedidos.
+
 ## Como executar localmente
 
 Instale as dependencias:
@@ -107,11 +109,11 @@ Em producao, edite `.env.production` com a URL publica do JSON Server.
 
 ## Links de publicacao
 
-Preencha estes links apos publicar os dois repositorios solicitados:
+Links publicos do projeto:
 
-- API JSON Server: `https://sua-api-json-server-publica.onrender.com`
-- Producao GitHub Pages: `https://seu-usuario.github.io/t-flor/`
-- Repositorio do projeto: `https://github.com/seu-usuario/t-flor`
+- API JSON Server: `https://my-json-server.typicode.com/JPMFA2004/banco-json`
+- Producao GitHub Pages: `https://jpmfa2004.github.io/t-flor/`
+- Repositorio do projeto: `https://github.com/JPMFA2004/t-flor`
 
 ## Deploy sugerido
 

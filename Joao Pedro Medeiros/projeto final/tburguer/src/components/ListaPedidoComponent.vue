@@ -104,12 +104,31 @@ export default {
     definirAlerta(tipo, titulo, mensagem) {
       this.alerta = { tipo, titulo, mensagem };
     },
+    usarPersistenciaLocal() {
+      return String(this.$apiUrl).includes("my-json-server.typicode.com");
+    },
+    buscarPedidosLocais() {
+      if (!this.usarPersistenciaLocal()) {
+        return [];
+      }
+
+      return JSON.parse(localStorage.getItem("tflor_pedidos") || "[]");
+    },
+    salvarPedidosLocais(pedidos) {
+      if (this.usarPersistenciaLocal()) {
+        localStorage.setItem("tflor_pedidos", JSON.stringify(pedidos));
+      }
+    },
     async consultarPedidos() {
       this.carregandoPedidos = true;
 
       try {
         const response = await fetch(`${this.$apiUrl}/pedidos`);
-        this.listaPedidosRealizados = await response.json();
+        const pedidosApi = await response.json();
+        this.listaPedidosRealizados = [
+          ...pedidosApi,
+          ...this.buscarPedidosLocais(),
+        ];
 
         if (this.$route.query.atualizado) {
           this.definirAlerta(
@@ -153,6 +172,12 @@ export default {
       });
 
       pedido.statusId = idStatusAtualizado;
+      const pedidosLocais = this.buscarPedidosLocais().map((pedidoLocal) =>
+        pedidoLocal.id === pedido.id
+          ? { ...pedidoLocal, statusId: idStatusAtualizado }
+          : pedidoLocal
+      );
+      this.salvarPedidosLocais(pedidosLocais);
       this.definirAlerta(
         "sucesso",
         "Status atualizado",
@@ -168,6 +193,10 @@ export default {
         this.listaPedidosRealizados = this.listaPedidosRealizados.filter(
           (pedido) => pedido.id !== idPedido
         );
+        const pedidosLocais = this.buscarPedidosLocais().filter(
+          (pedido) => pedido.id !== idPedido
+        );
+        this.salvarPedidosLocais(pedidosLocais);
         this.definirAlerta(
           "sucesso",
           "Pedido excluído",

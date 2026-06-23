@@ -232,6 +232,20 @@ export default {
       this.dataEntrega = "";
       this.mensagemCartao = "";
     },
+    usarPersistenciaLocal() {
+      return String(this.$apiUrl).includes("my-json-server.typicode.com");
+    },
+    salvarPedidoLocal(pedido) {
+      if (!this.usarPersistenciaLocal()) {
+        return;
+      }
+
+      const pedidosSalvos = JSON.parse(
+        localStorage.getItem("tflor_pedidos") || "[]"
+      );
+      pedidosSalvos.push(pedido);
+      localStorage.setItem("tflor_pedidos", JSON.stringify(pedidosSalvos));
+    },
     async criarPedido(e) {
       e.preventDefault();
 
@@ -257,11 +271,17 @@ export default {
       const dadosJson = JSON.stringify(dadosPedido);
 
       try {
-        await fetch(`${this.$apiUrl}/pedidos`, {
+        const response = await fetch(`${this.$apiUrl}/pedidos`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: dadosJson,
         });
+        const pedidoApi = await response.json().catch(() => ({}));
+        const pedidoSalvo = {
+          ...dadosPedido,
+          id: pedidoApi.id || Date.now(),
+        };
+        this.salvarPedidoLocal(pedidoSalvo);
 
         this.definirAlerta(
           "sucesso",
