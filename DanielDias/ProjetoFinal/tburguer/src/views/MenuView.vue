@@ -1,7 +1,14 @@
 <template>
   <div id="menu-container">
-    <h2 id="menu-titulo">Notre Menu</h2>
-    <div id="lista-menu">
+    <h2 id="menu-titulo">🍽️ Notre Menu</h2>
+
+    <AlertaComponent :mensagem="alertaMensagem" :tipo="alertaTipo" />
+
+    <div v-if="carregando" id="carregando">
+      <p id="texto-carregando">Carregando o menu, aguarde...</p>
+    </div>
+
+    <div v-else id="lista-menu">
       <div
         v-for="prato in listaMenuPratos"
         :key="prato.id"
@@ -11,7 +18,6 @@
         <div id="info-prato">
           <h3>{{ prato.nome }}</h3>
           <p id="preco-prato">R$ {{ prato.valor }},00</p>
-          <span v-if="prato.eh_novidade" id="badge-novidade">✨ Novidade</span>
         </div>
         <button @click="selecionarPrato(prato)">Selecionar</button>
       </div>
@@ -20,18 +26,37 @@
 </template>
 
 <script>
+import AlertaComponent from "@/components/AlertaComponent.vue";
+
 export default {
   name: "MenuView",
+  components: {
+    AlertaComponent,
+  },
   data() {
     return {
       listaMenuPratos: [],
+      carregando: true,
+      alertaMensagem: "Carregando o menu, aguarde...",
+      alertaTipo: "info",
     };
   },
   methods: {
     async getMenu() {
-      const response = await fetch(`${this.$apiUrl}/menu`);
-      const dados = await response.json();
-      this.listaMenuPratos = dados.pratos;
+      try {
+        this.carregando = true;
+        const response = await fetch(`${this.$apiUrl}/menu`);
+        const dados = await response.json();
+        this.listaMenuPratos = dados.pratos;
+        this.alertaMensagem = "";
+        this.alertaTipo = "";
+      } catch (error) {
+        this.alertaMensagem =
+          "Não foi possível carregar o menu. A API pode estar iniciando, aguarde e recarregue a página.";
+        this.alertaTipo = "erro";
+      } finally {
+        this.carregando = false;
+      }
     },
     selecionarPrato(prato) {
       const pratoJson = encodeURIComponent(JSON.stringify(prato));
@@ -64,6 +89,12 @@ export default {
   font-family: Georgia, serif;
 }
 
+#texto-carregando {
+  font-style: italic;
+  color: #8a7f6e;
+  font-size: 15px;
+}
+
 #lista-menu {
   display: flex;
   flex-wrap: wrap;
@@ -77,8 +108,8 @@ export default {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
-  transition: box-shadow 0.2s;
+  box-shadow: 0 5px 10px rgb(65,65,65);
+  transition: box-shadow 0.5s;
 }
 
 #menu-item:hover {
