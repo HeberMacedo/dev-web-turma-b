@@ -170,81 +170,101 @@ export default {
 
 <style scoped>
 #pedido-container {
-  padding: 30px;
-  max-width: 600px;
-  margin: 0 auto;
+  padding: 40px 48px;
+  max-width: 640px;
+  background-color: #faf8f4;
+  min-height: 60vh;
 }
 
 #info-prato-selecionado {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-#nome-prato-content {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-style: italic;
-  font-size: 28px;
-  color: #2c2c2c;
-  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 28px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e8e2d8;
 }
 
 #foto-content {
-  width: 250px;
-  height: 180px;
+  width: 110px;
+  height: 80px;
   object-fit: cover;
-  border-radius: 8px;
-  border: 2px solid #d4a847;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+#nome-prato-content {
+  font-style: italic;
+  font-size: 22px;
+  color: #1e1e1e;
+  font-weight: bold;
+  margin: 0;
 }
 
 .inputs {
-  margin-bottom: 18px;
+  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
 
 .inputs label {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-style: italic;
-  font-weight: bold;
-  color: #2c2c2c;
-  font-size: 16px;
+  font-style: normal;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #8a7f6e;
+  font-family: Georgia, serif;
 }
 
 .inputs input[type="text"],
 .inputs select {
-  padding: 8px;
-  border: 1px solid #d4a847;
-  border-radius: 5px;
-  font-size: 14px;
+  padding: 10px 12px;
+  border: 1px solid #ddd8cc;
+  border-radius: 6px;
+  font-size: 15px;
+  font-family: Georgia, serif;
+  background-color: #ffffff;
+  color: #1e1e1e;
   width: 100%;
+  transition: border-color 0.2s;
+}
+
+.inputs input[type="text"]:focus,
+.inputs select:focus {
+  outline: none;
+  border-color: #d4a847;
+}
+
+.inputs input[type="checkbox"] {
+  margin-right: 8px;
+  accent-color: #d4a847;
 }
 
 .obrigatorio {
-  color: #e53e3e;
+  color: #c0392b;
   font-style: normal;
 }
 
 #btn-container {
-  text-align: center;
-  margin-top: 20px;
+  margin-top: 28px;
 }
 
 button {
-  background-color: #2c2c2c;
-  color: #f5e6c8;
+  background-color: #1e1e1e;
+  color: #f0e6cc;
   border: none;
-  padding: 10px 30px;
-  border-radius: 5px;
+  padding: 12px 36px;
+  border-radius: 6px;
   cursor: pointer;
-  font-family: Georgia, 'Times New Roman', Times, serif;
   font-style: italic;
   font-size: 16px;
-  transition: 0.3s;
+  font-family: Georgia, serif;
+  transition: background-color 0.2s;
 }
 
 button:hover {
   background-color: #d4a847;
-  color: #2c2c2c;
+  color: #1e1e1e;
 }
 </style>
