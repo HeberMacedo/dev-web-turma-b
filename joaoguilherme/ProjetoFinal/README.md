@@ -1,7 +1,9 @@
 # 🍕 Pizzaria do Chefe
 
 🌐 **Aplicação:** https://pizzariadochefev.vercel.app/
+
 🗄️ **API:** https://api-pizzariadochefe.onrender.com/
+
 📁 **Repositório:** https://github.com/joaoguilhermee12/pizzariadochefe
 
 > **Aviso de Cold Start:** A API está hospedada na camada gratuita do Render. Após períodos de inatividade, o servidor pode levar até 50 segundos para responder na primeira requisição. Caso o cardápio não carregue imediatamente, aguarde alguns instantes e atualize a página (F5).
