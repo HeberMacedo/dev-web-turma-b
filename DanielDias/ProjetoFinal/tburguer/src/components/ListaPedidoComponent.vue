@@ -105,68 +105,86 @@ export default {
 
 <style scoped>
 #lista-pedidos-container {
-  padding: 30px;
+  padding: 40px 48px;
+  background-color: #faf8f4;
+  min-height: 60vh;
 }
 
 #pedidos-titulo {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-style: italic;
-  color: #2c2c2c;
-  font-size: 30px;
-  margin-bottom: 20px;
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #8a7f6e;
+  font-style: normal;
+  margin-bottom: 28px;
+  font-family: Georgia, serif;
 }
 
 #sem-pedidos p {
-  font-family: Georgia, 'Times New Roman', Times, serif;
   font-style: italic;
-  color: #888;
-  font-size: 16px;
+  color: #aaa49a;
+  font-size: 15px;
 }
 
 #pedido-item {
-  border: 2px solid #d4a847;
-  border-radius: 8px;
-  padding: 20px;
-  margin-bottom: 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-bottom: 16px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   gap: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
 #info-pedido p {
-  margin: 4px 0;
-  font-size: 15px;
+  margin: 3px 0;
+  font-size: 14px;
   color: #2c2c2c;
 }
 
+#info-pedido p strong {
+  color: #8a7f6e;
+  font-weight: normal;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
 #info-pedido ul {
-  margin: 4px 0 8px 20px;
-  font-size: 14px;
-  color: #444;
+  margin: 3px 0 10px 16px;
+  font-size: 13px;
+  color: #5a5450;
 }
 
 #acoes-pedido {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 15px;
+  align-items: flex-end;
+  gap: 12px;
+  min-width: 140px;
 }
 
 .status {
-  padding: 6px;
-  border: 1px solid #d4a847;
-  border-radius: 5px;
-  font-size: 14px;
+  padding: 7px 10px;
+  border: 1px solid #ddd8cc;
+  border-radius: 6px;
+  font-size: 13px;
+  font-family: Georgia, serif;
+  background: #faf8f4;
+  color: #2c2c2c;
   cursor: pointer;
+  width: 100%;
 }
 
 #icone-deletar {
   cursor: pointer;
-  transition: 0.3s;
+  opacity: 0.5;
+  transition: opacity 0.2s;
 }
 
 #icone-deletar:hover {
-  opacity: 0.6;
+  opacity: 1;
 }
 </style>
