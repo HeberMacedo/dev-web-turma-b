@@ -146,7 +146,7 @@ export default {
     },
     valorEstimado() {
       if (!this.produtoSelecionado) return 0;
-      return this.produtoSelecionado.precoBase * this.fatorPorte;
+      return this.produtoSelecionado.preco * this.fatorPorte;
     },
     avisoDiaFechado() {
       if (!this.form.dataHora) return false;

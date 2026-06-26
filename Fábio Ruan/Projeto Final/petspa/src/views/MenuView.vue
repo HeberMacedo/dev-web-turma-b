@@ -16,10 +16,14 @@
 
       <div v-else class="lista-servicos">
         <div v-for="produto in produtos" :key="produto.id" class="card-servico">
+          <img
+            :src="imagemUrl(produto.imagem)"
+            :alt="produto.nome"
+            class="servico-imagem"
+          />
           <h2>{{ produto.nome }}</h2>
           <p class="descricao">{{ produto.descricao }}</p>
-          <!-- Correção aplicada abaixo -->
-          <p class="preco">a partir de R$ {{ produto?.precoBase?.toFixed(2) ?? '0.00' }}</p>
+          <p class="preco">a partir de R$ {{ (produto.precoBase ?? produto.preco).toFixed(2) }}</p>
           <button @click="agendar(produto)">Agendar este serviço</button>
         </div>
       </div>
@@ -52,6 +56,9 @@ export default {
     }
   },
   methods: {
+    imagemUrl(imagem) {
+      return `${process.env.BASE_URL}img/${imagem}`;
+    },
     agendar(produto) {
       this.$router.push({ path: "/config", query: { produtoId: produto.id } });
     },
@@ -109,6 +116,15 @@ export default {
 
 .card-servico:hover {
   transform: translateY(-2px);
+}
+
+.servico-imagem {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 18px;
+  background: #f0faf8;
 }
 
 @media (max-width: 900px) {

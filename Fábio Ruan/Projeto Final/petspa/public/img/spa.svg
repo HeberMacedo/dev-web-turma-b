@@ -1,0 +1,7 @@
+<svg width="400" height="240" viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="240" rx="24" fill="#0B3D3E" />
+  <circle cx="200" cy="120" r="62" fill="#14B8A6" opacity="0.9" />
+  <path d="M160 90 C 180 60, 220 60, 240 90" stroke="#ffffff" stroke-width="14" fill="none" stroke-linecap="round" />
+  <path d="M160 150 C 180 180, 220 180, 240 150" stroke="#ffffff" stroke-width="14" fill="none" stroke-linecap="round" />
+  <text x="200" y="220" font-family="Arial, sans-serif" font-size="30" fill="#ffffff" text-anchor="middle">Spa</text>
+</svg>

@@ -1,17 +1,55 @@
 const dadosLocais = {
   "produtos": [
-    { "id": 1, "nome": "Banho Simples", "preco": 40, "imagem": "banho.jpg" },
-    { "id": 2, "nome": "Tosa Completa", "preco": 60, "imagem": "tosa.jpg" },
-    { "id": 3, "nome": "Hidratação Control", "preco": 35, "imagem": "hidratacao.jpg" },
-    { "id": 4, "nome": "Spa de Ofurô", "preco": 90, "imagem": "spa.jpg" }
+    {
+      "id": 1,
+      "nome": "Banho Simples",
+      "precoBase": 40,
+      "imagem": "banho.svg",
+      "descricao": "Banho rápido com shampoo neutro e secagem.",
+      "categoria": "banho"
+    },
+    {
+      "id": 2,
+      "nome": "Tosa Completa",
+      "precoBase": 60,
+      "imagem": "tosa.svg",
+      "descricao": "Tosa completa com acabamento e hidratação.",
+      "categoria": "tosa"
+    },
+    {
+      "id": 3,
+      "nome": "Hidratação Control",
+      "precoBase": 35,
+      "imagem": "hidratacao.svg",
+      "descricao": "Tratamento hidratante para pelos secos e quebradiços.",
+      "categoria": "banho"
+    },
+    {
+      "id": 4,
+      "nome": "Spa de Ofurô",
+      "precoBase": 90,
+      "imagem": "spa.svg",
+      "descricao": "Experiência completa com aroma-terapia e relaxamento.",
+      "categoria": "banho"
+    }
   ],
   "pedidos": []
 };
 
 export const BASE_URL = "LOCAL_MOCK";
 
+function normalizarProduto(produto) {
+  const precoBase = produto.precoBase ?? produto.preco ?? 0;
+  return {
+    ...produto,
+    precoBase,
+    preco: produto.preco ?? precoBase,
+    imagem: produto.imagem || "banho.svg",
+  };
+}
+
 export async function buscarProdutos() {
-  return Promise.resolve(dadosLocais.produtos);
+  return Promise.resolve(dadosLocais.produtos.map(normalizarProduto));
 }
 
 export async function buscarPedidos() {
