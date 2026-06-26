@@ -35,42 +35,45 @@ export default {
 <style scoped>
 .alerta {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
-  padding: 12px 16px;
+  padding: 11px 14px;
   border-radius: 6px;
-  border-left: 5px solid;
-  margin-bottom: 16px;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  border-left: 4px solid;
+  margin-bottom: 20px;
   font-size: 14px;
+  font-family: Georgia, serif;
+  font-style: italic;
+  line-height: 1.5;
 }
 
 .alerta-icone {
-  font-size: 18px;
+  font-size: 15px;
   flex-shrink: 0;
+  margin-top: 1px;
 }
 
 .erro {
-  background-color: #fde8e8;
-  border-color: #e53e3e;
-  color: #c53030;
+  background-color: #fff0f0;
+  border-color: #c0392b;
+  color: #922b21;
 }
 
 .aviso {
-  background-color: #fef3cd;
-  border-color: #f6a623;
-  color: #b76d00;
+  background-color: #fffbf0;
+  border-color: #d4a847;
+  color: #8a6000;
 }
 
 .info {
-  background-color: #e8f0fd;
-  border-color: #3b82f6;
-  color: #1d4ed8;
+  background-color: #f0f4ff;
+  border-color: #5b7ec9;
+  color: #2c4a8a;
 }
 
 .sucesso {
-  background-color: #e8f5e9;
-  border-color: #38a169;
-  color: #276749;
+  background-color: #f0faf4;
+  border-color: #27ae60;
+  color: #1a7a40;
 }
 </style>
