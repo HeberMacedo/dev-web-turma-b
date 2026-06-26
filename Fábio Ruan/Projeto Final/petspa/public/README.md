@@ -14,6 +14,6 @@ A comunicação visual e os feedbacks imediatos foram tratados através de um co
 * **Laranja/Azul:** Avisos e informações gerais do sistema.
 
 ## 🌐 Links do Projeto
-* **Link de Produção (Site na Web):** [INSIRA_AQUI_O_LINK_DA_VERCEL_OU_PAGES]
-* **Link da API (JSON Server):** [INSIRA_AQUI_O_LINK_DO_SEU_MOCK_JSON]
-* **Repositório do Código-Fonte:** [INSIRA_AQUI_O_LINK_DO_SEU_GITHUB]
+* **Link de Produção (Site na Web):** https://ofxzinho.github.io/dev-web-turma-b/
+* **Link da API (JSON Server):** https://my-json-server.typicode.com/ofxzinho/dev-web-turma-b/db
+* **Repositório do Código-Fonte:** https://github.com/ofxzinho/dev-web-turma-b
