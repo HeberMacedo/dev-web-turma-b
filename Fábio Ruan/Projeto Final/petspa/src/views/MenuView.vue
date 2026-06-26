@@ -18,7 +18,8 @@
         <div v-for="produto in produtos" :key="produto.id" class="card-servico">
           <h2>{{ produto.nome }}</h2>
           <p class="descricao">{{ produto.descricao }}</p>
-          <p class="preco">a partir de R$ {{ produto.precoBase.toFixed(2) }}</p>
+          <!-- Correção aplicada abaixo -->
+          <p class="preco">a partir de R$ {{ produto?.precoBase?.toFixed(2) ?? '0.00' }}</p>
           <button @click="agendar(produto)">Agendar este serviço</button>
         </div>
       </div>
