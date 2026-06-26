@@ -57,7 +57,10 @@ export default {
   },
   methods: {
     imagemUrl(imagem) {
-      return `${process.env.BASE_URL}img/${imagem}`;
+      if (!imagem) return "";
+      return /^https?:\/\//.test(imagem)
+        ? imagem
+        : `${process.env.BASE_URL}img/${imagem}`;
     },
     agendar(produto) {
       this.$router.push({ path: "/config", query: { produtoId: produto.id } });

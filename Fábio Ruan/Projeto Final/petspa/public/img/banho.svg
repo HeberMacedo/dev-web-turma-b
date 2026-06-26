@@ -1,9 +1,0 @@
-<svg width="400" height="240" viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg">
-  <rect width="400" height="240" rx="24" fill="#14B8A6" />
-  <path d="M80 140 C 120 90, 160 80, 200 100 C 240 120, 280 110, 320 80" stroke="#ffffff" stroke-width="18" fill="none" stroke-linecap="round" />
-  <circle cx="110" cy="170" r="16" fill="#ffffff" />
-  <circle cx="170" cy="170" r="16" fill="#ffffff" />
-  <circle cx="230" cy="170" r="16" fill="#ffffff" />
-  <circle cx="290" cy="170" r="16" fill="#ffffff" />
-  <text x="200" y="210" font-family="Arial, sans-serif" font-size="32" fill="#ffffff" text-anchor="middle">Banho</text>
-</svg>

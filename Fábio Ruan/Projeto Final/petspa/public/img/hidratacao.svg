@@ -1,7 +1,0 @@
-<svg width="400" height="240" viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg">
-  <rect width="400" height="240" rx="24" fill="#14B8A6" />
-  <path d="M140 60 C 160 20, 220 20, 240 60" stroke="#ffffff" stroke-width="18" fill="none" />
-  <path d="M120 120 C 140 170, 180 190, 200 150 C 220 110, 260 90, 280 140" stroke="#ffffff" stroke-width="16" fill="none" />
-  <circle cx="200" cy="156" r="12" fill="#ffffff" />
-  <text x="200" y="210" font-family="Arial, sans-serif" font-size="28" fill="#ffffff" text-anchor="middle">Hidratação</text>
-</svg>

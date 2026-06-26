@@ -4,7 +4,7 @@ const dadosLocais = {
       "id": 1,
       "nome": "Banho Simples",
       "precoBase": 40,
-      "imagem": "banho.svg",
+      "imagem": "banho.jpg",
       "descricao": "Banho rápido com shampoo neutro e secagem.",
       "categoria": "banho"
     },
@@ -12,7 +12,7 @@ const dadosLocais = {
       "id": 2,
       "nome": "Tosa Completa",
       "precoBase": 60,
-      "imagem": "tosa.svg",
+      "imagem": "tosa.jpg",
       "descricao": "Tosa completa com acabamento e hidratação.",
       "categoria": "tosa"
     },
@@ -20,7 +20,7 @@ const dadosLocais = {
       "id": 3,
       "nome": "Hidratação Control",
       "precoBase": 35,
-      "imagem": "hidratacao.svg",
+      "imagem": "hidratacao.jpg",
       "descricao": "Tratamento hidratante para pelos secos e quebradiços.",
       "categoria": "banho"
     },
@@ -28,7 +28,7 @@ const dadosLocais = {
       "id": 4,
       "nome": "Spa de Ofurô",
       "precoBase": 90,
-      "imagem": "spa.svg",
+      "imagem": "spa.jpg",
       "descricao": "Experiência completa com aroma-terapia e relaxamento.",
       "categoria": "banho"
     }
