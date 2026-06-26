@@ -81,7 +81,7 @@ Este projeto foi desenvolvido com foco em aprender a estrutura do projeto do pro
 Projeto acadêmico — Desenvolvimento Web (Vue 3).
 
 
-LINK:
+LINKS:
 
 
 Meu Repositorio: https://github.com/Daniel-Pinheiro21/Marmita-da-Casa
