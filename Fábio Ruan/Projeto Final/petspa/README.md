@@ -193,9 +193,9 @@ npm run deploy
 
 | Tipo | Link | Status |
 |------|------|--------|
-| 🌍 **Aplicação em Produção** | [PetSpa Live](https://seu-usuario.github.io/petspa) | ⏳ Em setup |
+| 🌍 **Aplicação em Produção** | [PetSpa Live](https://ofxzinho.github.io/dev-web-turma-b/) | ✅ Ativo |
 | 📊 **API Mock (JSON Server)** | [API PetSpa](https://seu-api.herokuapp.com) | ⏳ Em setup |
-| 💾 **Repositório GitHub** | [github.com/seu-usuario/petspa](https://github.com/seu-usuario/petspa) | ✅ Ativo |
+| 💾 **Repositório GitHub** | [github.com/ofxzinho/dev-web-turma-b](https://github.com/ofxzinho/dev-web-turma-b) | ✅ Ativo |
 
 ---
 
