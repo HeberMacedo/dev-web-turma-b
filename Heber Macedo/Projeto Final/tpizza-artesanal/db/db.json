@@ -1,0 +1,204 @@
+{
+  "tamanhos": [
+    {
+      "id": 1,
+      "descricao": "Pequena - 4 fatias"
+    },
+    {
+      "id": 2,
+      "descricao": "Media - 6 fatias"
+    },
+    {
+      "id": 3,
+      "descricao": "Grande - 8 fatias"
+    },
+    {
+      "id": 4,
+      "descricao": "Familia - 12 fatias"
+    }
+  ],
+  "status_pedido": [
+    {
+      "id": 1,
+      "descricao": "Pedido recebido"
+    },
+    {
+      "id": 2,
+      "descricao": "Em preparo"
+    },
+    {
+      "id": 3,
+      "descricao": "Saiu para entrega"
+    },
+    {
+      "id": 4,
+      "descricao": "Entregue"
+    },
+    {
+      "id": 5,
+      "descricao": "Pedido pendente"
+    },
+    {
+      "id": 6,
+      "descricao": "Pedido finalizado"
+    }
+  ],
+  "pedidos": [
+    {
+      "nome": "Marina Souza",
+      "tamanho": {
+        "id": 3,
+        "descricao": "Grande - 8 fatias"
+      },
+      "sabores": [
+        {
+          "id": 1,
+          "nome": "Calabresa Artesanal",
+          "descricao": "Calabresa fatiada, cebola roxa, mussarela e oregano.",
+          "valor": 0
+        },
+        {
+          "id": 2,
+          "nome": "Quatro Queijos",
+          "descricao": "Mussarela, parmesao, provolone e catupiry.",
+          "valor": 0
+        }
+      ],
+      "borda": {
+        "id": 1,
+        "nome": "Borda de Catupiry",
+        "valor": 8
+      },
+      "bebidas": [
+        {
+          "id": 1,
+          "nome": "Refrigerante Cola 2L",
+          "valor": 12
+        }
+      ],
+      "pizza": {
+        "id": 1,
+        "nome": "Pizza Meio-a-Meio",
+        "foto": "https://images.unsplash.com/photo-1594007654729-407eedc4be65?auto=format&fit=crop&w=900&q=80",
+        "descricao": "Monte uma pizza com ate dois sabores da casa e escolha o tamanho ideal.",
+        "valor": 42,
+        "eh_novidade": true
+      },
+      "statusId": 5,
+      "id": 1
+    }
+  ],
+  "opcionais": {
+    "sabores": [
+      {
+        "id": 1,
+        "nome": "Calabresa Artesanal",
+        "descricao": "Calabresa fatiada, cebola roxa, mussarela e oregano.",
+        "valor": 0
+      },
+      {
+        "id": 2,
+        "nome": "Quatro Queijos",
+        "descricao": "Mussarela, parmesao, provolone e catupiry.",
+        "valor": 0
+      },
+      {
+        "id": 3,
+        "nome": "Frango com Catupiry",
+        "descricao": "Frango desfiado temperado, catupiry e milho verde.",
+        "valor": 0
+      },
+      {
+        "id": 4,
+        "nome": "Marguerita",
+        "descricao": "Mussarela, tomate, manjericao fresco e molho artesanal.",
+        "valor": 0
+      }
+    ],
+    "bordas": [
+      {
+        "id": 1,
+        "nome": "Borda de Catupiry",
+        "valor": 8
+      },
+      {
+        "id": 2,
+        "nome": "Borda de Cheddar",
+        "valor": 8
+      },
+      {
+        "id": 3,
+        "nome": "Borda de Chocolate",
+        "valor": 10
+      }
+    ],
+    "bebidas": [
+      {
+        "id": 1,
+        "nome": "Refrigerante Cola 2L",
+        "valor": 12
+      },
+      {
+        "id": 2,
+        "nome": "Guarana 2L",
+        "valor": 11
+      },
+      {
+        "id": 3,
+        "nome": "Suco de Uva 1L",
+        "valor": 14
+      },
+      {
+        "id": 4,
+        "nome": "Agua com Gas 500ml",
+        "valor": 5
+      }
+    ]
+  },
+  "menu": {
+    "promocoes": [
+      {
+        "id": 10,
+        "nome": "Combo Familia",
+        "foto": "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=900&q=80",
+        "descricao": "Pizza familia, borda recheada e refrigerante para compartilhar.",
+        "valor": 72,
+        "eh_novidade": true
+      }
+    ],
+    "pizzas": [
+      {
+        "id": 1,
+        "nome": "Pizza Meio-a-Meio",
+        "foto": "https://images.unsplash.com/photo-1594007654729-407eedc4be65?auto=format&fit=crop&w=900&q=80",
+        "descricao": "Monte uma pizza com ate dois sabores da casa e escolha o tamanho ideal.",
+        "valor": 42,
+        "eh_novidade": true
+      },
+      {
+        "id": 2,
+        "nome": "Calabresa da Casa",
+        "foto": "https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=900&q=80",
+        "descricao": "Calabresa artesanal, cebola roxa, mussarela especial e oregano.",
+        "valor": 38,
+        "eh_novidade": false
+      },
+      {
+        "id": 3,
+        "nome": "Quatro Queijos",
+        "foto": "https://images.unsplash.com/photo-1548369937-47519962c11a?auto=format&fit=crop&w=900&q=80",
+        "descricao": "Mussarela, parmesao, provolone e catupiry sobre molho de tomate da casa.",
+        "valor": 44,
+        "eh_novidade": true
+      },
+      {
+        "id": 4,
+        "nome": "Frango Catupiry",
+        "foto": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=900&q=80",
+        "descricao": "Frango temperado, catupiry, milho verde e mussarela gratinada.",
+        "valor": 41,
+        "eh_novidade": false
+      }
+    ]
+  }
+}
